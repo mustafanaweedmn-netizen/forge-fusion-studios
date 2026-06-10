@@ -253,7 +253,7 @@ const Footer=({go})=>(
         <div>
           <h4 style={{color:'rgba(255,255,255,.4)',fontSize:10,letterSpacing:'3px',fontWeight:600,textTransform:'uppercase',marginBottom:16}}>Contact</h4>
           <div style={{color:'rgba(255,255,255,.75)',fontSize:13,lineHeight:2.1}}>
-            <div>forgefusionstudios@gmail.com</div><div>+92 337 4671221</div><div>forgefusionstudios.com</div>
+            <div>forgefusionstudios@gmail.com</div><div>+92 339 4042407</div><div>forgefusionstudios.com</div>
             <div style={{marginTop:4,color:'rgba(255,255,255,.45)'}}>Lahore, Pakistan — working globally</div>
           </div>
           <button onClick={()=>window.open('https://calendly.com/forgefusionstudios/15min','_blank')} style={{marginTop:20,background:'#ED1E79',color:'#fff',padding:'10px 20px',borderRadius:50,border:'none',cursor:'pointer',fontSize:12,fontWeight:600}}>Book Strategy Call</button>
@@ -1066,7 +1066,7 @@ const ContactPage=()=>{
   const lbl={fontSize:11,fontWeight:600,color:MD,letterSpacing:'.8px',marginBottom:7,display:'block',textTransform:'uppercase'};
   const contactItems=[
     {ic:'envelope',l:'Email',           v:'forgefusionstudios@gmail.com'},
-    {ic:'phone2',  l:'Phone / WhatsApp',v:'+92 337 4671221'},
+    {ic:'phone2',  l:'Phone / WhatsApp',v:'+92 339 4042407',href:'https://wa.me/923394042407'},
     {ic:'website', l:'Website',         v:'forgefusionstudios.com'},
     {ic:'pin',     l:'Location',        v:'Lahore, Pakistan — working with clients globally'},
     {ic:'clock',   l:'Response Time',   v:'Within 24 hours on business days'},
@@ -1086,7 +1086,10 @@ const ContactPage=()=>{
                 </div>
                 <div>
                   <div style={{fontSize:10,fontWeight:600,color:MD,letterSpacing:'1.5px',textTransform:'uppercase',marginBottom:2}}>{c.l}</div>
-                  <div style={{fontSize:13,fontWeight:500,color:DK}}>{c.v}</div>
+                  {c.href
+                    ? <a href={c.href} target="_blank" rel="noopener noreferrer" style={{fontSize:13,fontWeight:500,color:PK,textDecoration:'none'}}>{c.v}</a>
+                    : <div style={{fontSize:13,fontWeight:500,color:DK}}>{c.v}</div>
+                  }
                 </div>
               </div>
             ))}
