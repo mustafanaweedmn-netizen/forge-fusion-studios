@@ -990,22 +990,124 @@ const AboutPage=({go})=>{
 };
 
 /* ─── BLOG PAGE ─────────────────────────────────── */
-const BlogPage=()=>{
+const BLOG_POSTS=[
+  {t:"Why Businesses Don't Need More Posts — They Need a Lead Generation System",cat:'Lead Generation',min:'5 min',d:"Most businesses believe that posting more on social media will generate leads. The reality is very different.",ic:'target',
+   body:[
+    {h:"The post-and-pray approach doesn't work",p:"Every day, thousands of service businesses publish content with one silent hope: that someone will see it, be impressed, and reach out.\n\nSome do. Most don't.\n\nNot because the content is bad. Because content alone is not a lead generation system. It's one input into a system that doesn't exist."},
+    {h:"What a lead generation system actually looks like",p:"A lead generation system has five connected parts.\n\nFirst, clear positioning — who you serve, what problem you solve, and why you're the right choice.\n\nSecond, a converting website — conversion-focused copy, a clear CTA on every page, and a lead capture form that qualifies enquiries.\n\nThird, content with a purpose — posts that speak directly to your ideal client's problems, build authority in your specific niche, and always include a logical next step.\n\nFourth, structured outreach — a proactive system for identifying ideal clients and reaching them directly.\n\nFifth, follow-up automation — so no lead falls through the cracks after expressing interest."},
+    {h:"Why most businesses only have one of the five",p:"Most businesses have content. Some have a decent website. Very few have all five working together.\n\nThe result is predictable: visible, active, and not growing.\n\nThis isn't a failure of effort. It's a failure of structure. You can post every day for a year and generate zero enquiries if the other four parts aren't in place.\n\nThis is why the AI Growth Audit exists — to diagnose exactly which parts are missing or broken, and to tell you what to fix first."},
+    {h:"The shift that changes everything",p:"When businesses shift from thinking about content as the goal to thinking about content as one input into a system, everything changes.\n\nContent becomes purposeful. The website becomes a tool. Outreach becomes consistent. Follow-up becomes automatic.\n\nThis is what we build at Forge Fusion Studios. Not just posts. Systems."}
+   ]},
+  {t:"How AI Can Help Service Businesses Capture and Follow Up With Leads",cat:'AI for Business',min:'6 min',d:"AI-assisted workflows are changing how service businesses manage their leads. A practical breakdown of what's possible today.",ic:'robot',
+   body:[
+    {h:"The lead problem most businesses don't talk about",p:"Most businesses spend their marketing energy on generating leads. Almost none of them spend enough energy on what happens after a lead arrives.\n\nSomeone fills in a form. They're interested. They're ready.\n\nAnd then they wait. Sometimes hours. Sometimes days.\n\nBy the time the business replies, the prospect has moved on. Called someone else. Forgotten they even enquired.\n\nThis is the most expensive gap in most service businesses — and it's entirely fixable with AI-assisted workflows."},
+    {h:"What AI actually does in a lead management workflow",p:"The moment someone submits your contact form, an automated response goes out — personalised, confirming you've received their enquiry, and offering a direct link to book a call immediately.\n\nWithin 24 hours, a second touchpoint goes out — a personally written follow-up from you, referencing their specific situation.\n\nAt 72 hours, if there's been no response, a third and final message checks in.\n\nThis entire sequence runs automatically. You focus on the conversations. The system handles the cadence."},
+    {h:"AI-assisted qualification",p:"Before a lead even gets to a call with you, AI can help you understand who they are and whether they're a good fit.\n\nA well-designed lead capture form — combined with AI analysis of the responses — can tell you the prospect's industry, their specific challenge, their budget range, and how urgently they're looking for a solution.\n\nThis means your first conversation is already informed. You're not spending 20 minutes on basic context. You're spending 20 minutes solving a specific, understood problem."},
+    {h:"The tools are simpler than you think",p:"You don't need a $500/month enterprise platform to implement this.\n\nA form tool like Typeform, connected to a simple email automation sequence through Brevo or Mailchimp, and a booking link through Calendly — that's the core of the system.\n\nThis is exactly what we build as part of the Website + Lead Capture Strategy at Forge Fusion Studios."}
+   ]},
+  {t:"How Medical Billing Companies Can Use Digital Marketing to Reach More Clinics",cat:'Healthcare Marketing',min:'7 min',d:"Medical billing companies face a unique challenge: selling a complex service to busy healthcare providers.",ic:'medical',
+   body:[
+    {h:"Why generic digital marketing doesn't work for medical billing",p:"Medical billing is one of the most trust-sensitive services in B2B healthcare.\n\nYou're asking a physician or practice manager — already stretched thin — to hand over control of their revenue cycle to an outside company they found online.\n\nGeneric marketing doesn't break through this barrier. Motivational quotes, industry news shares, and announcements do nothing to build the specific clinical credibility that healthcare providers need before they'll have a conversation."},
+    {h:"The four elements that actually work",p:"Specialty-specific positioning. A medical billing company that positions itself as the expert in cardiology billing will always outperform one that claims to handle all specialties equally.\n\nWebsite copy that speaks the language of clinic owners. Not 'revenue cycle management solutions' — but 'faster reimbursements, fewer claim denials, and less admin time for your front desk.'\n\nAuthority content on specific billing challenges. Blog posts and LinkedIn content that address exact problems — prior authorisation delays, denial patterns, compliance updates — build credibility before the first conversation.\n\nOutreach that feels personal and relevant. A cold email that references a specific specialty and offers something specific — a free denial audit — gets responses. Generic outreach does not."},
+    {h:"The trust-building timeline",p:"Medical billing is a long sales cycle. Clinic owners don't switch billing providers on a whim.\n\nThe role of digital marketing isn't to generate a call on the first interaction. It's to build enough trust, over enough touchpoints, that when the practice is ready to make a change, your company is the one they think of first."},
+    {h:"Start with an audit",p:"Before investing in any of these tactics, we recommend an AI Growth Audit of your current digital presence.\n\nThe audit tells you exactly where your biggest gaps are and what to fix first. Most medical billing companies we work with have two or three fixable gaps that, once addressed, significantly improve their inbound enquiry rate.\n\nBook a free strategy call at forgefusionstudios.com."}
+   ]},
+  {t:"Why Your Website Looks Good But Still Doesn't Generate Leads",cat:'Website Strategy',min:'5 min',d:"Design is only half the equation. A website needs clear messaging, a strong CTA, and a lead capture flow to actually work.",ic:'laptop',
+   body:[
+    {h:"The design trap",p:"You spent money on the website. The design is clean. The colours are right. Your friends said it looks great.\n\nBut the enquiries are not coming in.\n\nThe answer is almost never the design. The things that actually drive conversions are invisible until you know what to look for."},
+    {h:"Reason 1: Your homepage doesn't answer the right question fast enough",p:"When someone lands on your website, they have one question: is this for me?\n\nThey are scanning — in about five seconds — to decide whether to stay or leave.\n\nIf your headline is your company name or a vague tagline, you have already lost them.\n\nYour headline needs to say three things immediately: who you help, what you do for them, and what changes. Not your story. Their outcome."},
+    {h:"Reason 2: There is no clear next step",p:"Most websites have a contact page. That is not a CTA strategy.\n\nVisitors who are genuinely interested will not go looking for your contact form on their own.\n\nEvery page needs one primary call to action. One clear button. One clear instruction.\n\nNot three options. Not a phone number buried in the footer. One clear next step, repeated consistently."},
+    {h:"Reason 3: No follow-up after the enquiry",p:"Someone fills in your contact form. They are ready to have a conversation.\n\nAnd then they wait.\n\nBy the time you reply the next day, they have already called someone else.\n\nThe moment someone submits a form, they should receive an automatic reply with a link to book a call. Within 24 hours, a personalised follow-up. Within 72 hours, a second touchpoint.\n\nMost businesses have none of this. This is what the Website + Lead Capture Strategy at Forge Fusion Studios addresses."}
+   ]},
+  {t:"How Founder-Led Agencies Can Compete in the AI Era",cat:'Founder-Led Growth',min:'4 min',d:"The rise of AI tools has actually created a massive advantage for lean, founder-led agencies.",ic:'rocket',
+   body:[
+    {h:"Why the traditional agency model is under pressure",p:"Large agencies competed on scale — more people, more capacity, more resources.\n\nAI has flipped this advantage. A single experienced strategist with the right AI-assisted workflows can now produce the research, copy, content, and reporting that previously required a team of five or six.\n\nThe core value proposition of large agency teams is being eroded. And the qualities they've always struggled to offer — personal attention, genuine accountability, strategic continuity — are now the differentiators that matter."},
+    {h:"The founder-led advantage",p:"When a client works with a founder-led agency, they get something no large agency can authentically offer: the person who sold them the strategy is the person executing it.\n\nNo handoffs to junior staff. No dilution of the strategic thinking. No account manager acting as an interpreter between the client and the work.\n\nThe founder knows the client's business, their industry, their goals, and their constraints. Every decision is made with that context intact."},
+    {h:"How AI changes the capacity equation",p:"The historical limitation of founder-led agencies was capacity. One person can only work so many hours.\n\nAI-assisted workflows have changed this fundamentally.\n\nAudit research that used to take two days now takes two hours. Content production that required a team of writers can now be produced by a single strategist working with AI tools.\n\nAt Forge Fusion Studios, this is exactly how we operate. Founder-led. AI-assisted. Results-focused."}
+   ]},
+  {t:"The Difference Between Content Creation and Content Systems",cat:'Content Marketing',min:'5 min',d:"Creating content and building a content system are two very different things. Here's why the system matters more.",ic:'content',
+   body:[
+    {h:"Most businesses are creating content. Almost none are building systems.",p:"Content creation is the act of producing individual pieces — a post, a video, a blog article. It answers: what should I publish today?\n\nA content system is the infrastructure that makes every piece purposeful, consistent, and connected to a business outcome. It answers: what are we trying to achieve this month, and how does every piece of content contribute to that goal?"},
+    {h:"The four questions a content system answers before anything is written",p:"Who exactly are we talking to? Not businesses in general — but a specific industry, a specific decision-maker, a specific set of problems.\n\nWhat problem are we helping them solve? The specific challenge that keeps them up at night.\n\nWhat do we want them to do after reading? A specific action that moves them closer to a conversation.\n\nHow does this piece connect to a business goal? Not build awareness in general — but generate two qualified enquiries from this industry this month."},
+    {h:"Why consistency is more valuable than individual brilliance",p:"The most common content mistake we see: a business posts ten brilliant pieces in one week, then disappears for three months.\n\nYour audience doesn't remember brilliance they saw once. They trust consistency they see every week.\n\nA content system makes consistency the default — not by producing average work, but by creating a structure that keeps high-quality content flowing regardless of how busy the week is.\n\nThis is what the AI Content System at Forge Fusion Studios delivers every month."}
+   ]},
+  {t:"How to Build a Simple Lead Follow-Up System Without Expensive Software",cat:'Lead Generation',min:'6 min',d:"You don't need a $500/month CRM to follow up with leads effectively. Here is a simple, low-cost approach.",ic:'clipboard',
+   body:[
+    {h:"The follow-up gap is costing you more than you realise",p:"Most service businesses lose between 30 and 50 percent of their potential revenue not at the top of the funnel, but at the follow-up stage.\n\nSomeone reaches out. They're interested. But they don't hear back quickly enough, or the follow-up feels generic, or they fall through the cracks.\n\nThe good news: fixing this does not require expensive software. It requires a clear system."},
+    {h:"The three-part follow-up structure",p:"Immediate acknowledgement. The moment someone submits a form, they receive an automatic response within seconds — confirming receipt, setting expectations, and offering a direct link to book a call.\n\nPersonal follow-up within 24 hours. A short, personally written message — not a template — that references what they shared and offers a specific next step.\n\nA second touchpoint at 72 hours. A brief, low-pressure check-in. Short. Specific. No pressure. This alone recovers a significant percentage of leads that would otherwise have gone cold."},
+    {h:"The tools you already have or can get for free",p:"Formspree or Typeform connected to Brevo or Mailchimp handles the auto-response automatically.\n\nFor the personal follow-up: a calendar reminder at 24 hours. No automation needed — just a habit.\n\nFor tracking: a Google Sheet with five columns — Name, Enquiry Date, First Follow-Up Sent, Second Follow-Up Sent, Status. Ten minutes to set up. Eliminates the problem of leads falling through the cracks entirely."}
+   ]},
+  {t:"Why AI Will Not Replace Creative Direction",cat:'AI for Business',min:'4 min',d:"AI is changing creative work. But the one thing it cannot replace is human judgment, taste, and strategic thinking.",ic:'brush',
+   body:[
+    {h:"What AI is genuinely good at in creative work",p:"AI generates options quickly. Given a clear brief, a good AI tool can produce ten headline variations, five visual directions, or a full article draft in the time it takes a human to write an opening paragraph.\n\nIt removes friction from production. The blank page problem, the slow first draft, the iterative copy testing — AI compresses all of these.\n\nIt scales repetitive creative tasks. Fifty social media post variations, adapting a campaign across multiple formats, translating copy — AI handles all of this faster and more cost-effectively than a human team."},
+    {h:"What AI cannot do",p:"AI cannot decide what the right thing to say is.\n\nIt can produce options — many, quickly, on demand. But choosing the right option requires taste, judgment, and an understanding of the specific client, their specific audience, their specific moment in their specific market.\n\nCreative direction is the act of making those choices. It is not the act of producing options. It is the act of knowing which option serves the strategy and will resonate with the audience it's aimed at."},
+    {h:"The model that actually works",p:"The creative practitioners who will thrive in the AI era are not the ones who ignore AI and not the ones who let AI make every decision.\n\nThey're the ones who use AI as a production accelerator and reserve human judgment for the decisions that actually matter.\n\nAt Forge Fusion Studios, AI handles the research, the first drafts, the content scaling, and the reporting. The founder makes every strategic and creative decision. Faster delivery. More options. Uncompromised judgment."}
+   ]},
+  {t:"How to Turn a Company Profile into a Lead Generation Asset",cat:'Branding',min:'5 min',d:"Most company profiles are boring PDFs that nobody reads. Here is how to turn yours into an actual sales tool.",ic:'sparkle',
+   body:[
+    {h:"Why most company profiles fail",p:"Most company profiles follow the same structure: who we are, what we do, our team, our clients, contact us.\n\nAnd most of them go unread — because they're written for the company, not for the client.\n\nThey lead with history when they should lead with relevance. They describe services when they should describe outcomes. They end with a generic contact page when they should end with a specific, frictionless next step."},
+    {h:"Lead with the client's problem, not your history",p:"The most important structural change: don't open with who you are. Open with who your client is and what problem they're facing.\n\nIf the client recognises their situation in your opening sentence, they keep reading.\n\nYour company history and team bios are not irrelevant — they're just not the reason anyone will read your profile. Lead with relevance. Follow with credibility."},
+    {h:"Use case study language throughout",p:"The most persuasive content in any company profile is specific proof.\n\nNot 'we help businesses grow their digital presence' — but 'we helped a medical billing company go from zero inbound enquiries to fifteen per month within thirty days.'\n\nSpecificity is what makes proof credible. Named clients. Real industries. Concrete outcomes."},
+    {h:"End with a clear, frictionless next step",p:"The final page of most company profiles: a logo, an address, and a phone number.\n\nThis is not a CTA.\n\nYour company profile should end with one specific, low-friction next step: book a free strategy call, request a proposal, download the audit guide.\n\nInclude the link. Make it obvious. Make it easy.\n\nWe write company profiles as part of our Brand Positioning + Company Profile service. Start with a free strategy call at forgefusionstudios.com."}
+   ]},
+  {t:"The Future of Branding in an AI-Powered Business World",cat:'Branding',min:'7 min',d:"AI is changing brand building. The brands that will win combine AI speed with human authenticity.",ic:'crystal',
+   body:[
+    {h:"What AI is changing about branding",p:"AI has fundamentally changed two things about brand building: the speed of production and the cost of entry.\n\nA brand identity that would have taken six weeks to produce can now be prototyped in six hours. A brand strategy that required weeks of research can now be informed by AI-assisted competitive analysis in a fraction of the time.\n\nFor businesses, this is a genuine democratisation. Small companies can now access brand thinking and production quality that was previously only available to well-funded enterprises."},
+    {h:"The commoditisation problem",p:"When AI makes brand production fast and cheap, more brands start to look like each other.\n\nThe AI tools that generate logos, colour palettes, and brand guidelines are trained on the same data. They recognise the same patterns as professional. They reproduce the same aesthetic conventions as credible.\n\nThe result is a generation of brands that are technically competent but strategically indistinguishable."},
+    {h:"What human judgment still provides",p:"The element of branding that AI cannot provide is a genuine point of view.\n\nA brand that stands for something specific — that takes a clear position on what it believes, who it serves, and what it refuses to do — cannot be generated by an AI tool. It requires a human decision about what the brand is actually for.\n\nWhen that positioning is clear and defensible, the visual identity becomes a natural expression of it. The content has a consistent voice. The website has a point of view.\n\nWithout it, the brand is just a logo with a colour scheme."},
+    {h:"The brands that will win",p:"The brands that will build the most durable market positions combine AI's production speed with a human-defined, genuinely distinctive positioning.\n\nThey will use AI to produce more — more content, more creative options, more formats. But the decisions about what to stand for, who to serve, and what to say will remain human.\n\nAt Forge Fusion Studios, this is the philosophy behind every brand project. AI-assisted production. Human-defined strategy. Start with a free strategy call at forgefusionstudios.com."}
+   ]},
+];
+
+const BlogPostPage=({post,onBack})=>(
+  <div style={{paddingTop:70}}>
+    <div style={{background:'#fff',borderBottom:'1px solid rgba(102,45,145,.08)',padding:'16px 24px'}}>
+      <div style={{maxWidth:760,margin:'0 auto'}}>
+        <button onClick={onBack} style={{background:'none',border:'none',cursor:'pointer',color:PK,fontWeight:600,fontSize:13,display:'flex',alignItems:'center',gap:6}}>
+          <span style={{fontSize:16}}>←</span> Back to Blog
+        </button>
+      </div>
+    </div>
+    <div style={{maxWidth:760,margin:'0 auto',padding:'48px 24px 80px'}}>
+      <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:20}}>
+        <span style={{background:`${PK}15`,color:PK,fontSize:12,padding:'5px 12px',borderRadius:50,fontWeight:600}}>{post.cat}</span>
+        <span style={{fontSize:12,color:MD}}>{post.min} read</span>
+      </div>
+      <h1 style={{fontSize:'clamp(24px,4vw,38px)',fontWeight:900,color:DK,lineHeight:1.2,marginBottom:24}}>{post.t}</h1>
+      <div style={{display:'flex',alignItems:'center',gap:10,paddingBottom:24,borderBottom:`2px solid ${PU}20`,marginBottom:40}}>
+        <div style={{width:40,height:40,borderRadius:'50%',background:GR,display:'flex',alignItems:'center',justifyContent:'center'}}>
+          <IC name='rocket' size={18} color='#fff'/>
+        </div>
+        <div>
+          <div style={{fontSize:14,fontWeight:700,color:DK}}>Forge Fusion Studios</div>
+          <div style={{fontSize:12,color:MD}}>Lahore, Pakistan</div>
+        </div>
+      </div>
+      {post.body.map((sec,i)=>(
+        <div key={i} style={{marginBottom:40}}>
+          <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:DK,marginBottom:14,lineHeight:1.3}}>{sec.h}</h2>
+          {sec.p.split('\n\n').map((para,j)=>(
+            <p key={j} style={{fontSize:16,color:MD,lineHeight:1.9,marginBottom:18}}>{para}</p>
+          ))}
+        </div>
+      ))}
+      <div style={{background:`linear-gradient(135deg,${PK}12,${PU}12)`,borderRadius:20,padding:'40px 36px',marginTop:48,textAlign:'center',border:`1px solid ${PK}20`}}>
+        <h3 style={{fontSize:22,fontWeight:800,color:DK,marginBottom:10}}>Ready to build a system that actually generates leads?</h3>
+        <p style={{color:MD,marginBottom:28,fontSize:14,lineHeight:1.7}}>Book a free 15-minute strategy call with Forge Fusion Studios. No pitch. No pressure. Clear direction.</p>
+        <GBtn onClick={()=>window.open('https://calendly.com/forgefusionstudios/15min','_blank')}>Book a Free Strategy Call →</GBtn>
+      </div>
+    </div>
+  </div>
+);
+
+const BlogPage=({go})=>{
   const cats=['All','AI for Business','Lead Generation','Branding','Website Strategy','Content Marketing','Healthcare Marketing','Founder-Led Growth'];
   const[sel,setSel]=useState('All');
-  const posts=[
-    {t:"Why Businesses Don't Need More Posts — They Need a Lead Generation System",     cat:'Lead Generation',     min:'5 min',d:"Most businesses believe that posting more on social media will generate leads. The reality is very different.",ic:'target'},
-    {t:"How AI Can Help Service Businesses Capture and Follow Up With Leads",           cat:'AI for Business',     min:'6 min',d:"AI-assisted workflows are changing how service businesses manage their leads. A practical breakdown of what's possible today.",ic:'robot'},
-    {t:"How Medical Billing Companies Can Use Digital Marketing to Reach More Clinics", cat:'Healthcare Marketing',min:'7 min',d:"Medical billing companies face a unique challenge: selling a complex service to busy healthcare providers.",ic:'medical'},
-    {t:"Why Your Website Looks Good But Still Doesn't Generate Leads",                 cat:'Website Strategy',    min:'5 min',d:"Design is only half the equation. A website needs clear messaging, a strong CTA, and a lead capture flow to actually work.",ic:'laptop'},
-    {t:"How Founder-Led Agencies Can Compete in the AI Era",                            cat:'Founder-Led Growth',  min:'4 min',d:"The rise of AI tools has actually created a massive advantage for lean, founder-led agencies.",ic:'rocket'},
-    {t:"The Difference Between Content Creation and Content Systems",                   cat:'Content Marketing',   min:'5 min',d:"Creating content and building a content system are two very different things. Here's why the system matters more.",ic:'content'},
-    {t:"How to Build a Simple Lead Follow-Up System Without Expensive Software",        cat:'Lead Generation',     min:'6 min',d:"You don't need a $500/month CRM to follow up with leads effectively. Here is a simple, low-cost approach.",ic:'clipboard'},
-    {t:"Why AI Will Not Replace Creative Direction",                                    cat:'AI for Business',     min:'4 min',d:"AI is changing creative work. But the one thing it cannot replace is human judgment, taste, and strategic thinking.",ic:'brush'},
-    {t:"How to Turn a Company Profile into a Lead Generation Asset",                    cat:'Branding',            min:'5 min',d:"Most company profiles are boring PDFs that nobody reads. Here is how to turn yours into an actual sales tool.",ic:'sparkle'},
-    {t:"The Future of Branding in an AI-Powered Business World",                       cat:'Branding',            min:'7 min',d:"AI is changing brand building. The brands that will win combine AI speed with human authenticity.",ic:'crystal'},
-  ];
+  const[openPost,setOpenPost]=useState(null);
+  const posts=BLOG_POSTS;
   const filtered=sel==='All'?posts:posts.filter(p=>p.cat===sel);
+  if(openPost) return <BlogPostPage post={openPost} onBack={()=>setOpenPost(null)}/>;
+
   return(
     <div style={{paddingTop:70}}>
       <Hero eyebrow="Blog" title="Ideas on AI, creativity, branding, and growth." sub="Practical insights for businesses that want better websites, content, lead generation, and creative systems."/>
@@ -1018,7 +1120,7 @@ const BlogPage=()=>{
         <div style={{maxWidth:1200,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:26}}>
           {filtered.map((p,i)=>(
             <FU key={i} d={i*.05}>
-              <div style={{background:SF,borderRadius:20,overflow:'hidden',cursor:'pointer',transition:'transform .3s',height:'100%',display:'flex',flexDirection:'column'}}
+              <div onClick={()=>setOpenPost(p)} style={{background:SF,borderRadius:20,overflow:'hidden',cursor:'pointer',transition:'transform .3s',height:'100%',display:'flex',flexDirection:'column'}}
                 onMouseEnter={e=>e.currentTarget.style.transform='translateY(-5px)'}
                 onMouseLeave={e=>e.currentTarget.style.transform='none'}>
                 <div style={{height:140,background:`linear-gradient(135deg,${PK}18,${PU}18)`,display:'flex',alignItems:'center',justifyContent:'center'}}>
